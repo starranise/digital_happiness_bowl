@@ -35,7 +35,7 @@
         </label>
 
         <%= select_tag(:sender_id, options_from_collection_for_select(User.all, :id, :f_name, @message.sender_id),  :class => "form-control") %>
-      
+
       </div>
 
       <!-- Label and input for message_text -->

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root "messages#index"
 
+  get "/pages", :controller => "pages", :action => "show"
+
   get "/notes/new", :controller => "notes", :action => "new"
   post "/create_note", :controller => "notes", :action => "create"
 
