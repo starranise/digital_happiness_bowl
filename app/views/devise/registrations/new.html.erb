@@ -16,14 +16,15 @@
   <%= devise_error_messages! %>
 
   <div class="field" class="form-group">
-    <label class="control-label" for="user_f_name">First Name</label>
-        <input class="form-control" type="text" name="user[first_name]" id="user_first_name" />
+    <%= f.label :f_name %><br />
+    <%= f.text_field :f_name, autofocus: true, :class => "form-control" %>
   </div>
 
   <div class="field" class="form-group">
-    <label class="control-label" for="user_l_name">Last Name</label>
-        <input class="form-control" type="text" name="user[last_name]" id="user_last_name" />
+    <%= f.label :l_name %><br />
+    <%= f.text_field :l_name, autofocus: true, :class => "form-control" %>
   </div>
+
 
   <div class="field" class="form-group">
     <%= f.label :email %><br />
