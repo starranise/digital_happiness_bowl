@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+
+          <div class="page-header">
+
+            <h1>
+              My Received Messages
+              <a href="/messages/new" class="btn btn-lg btn-primary">Write a New Message</a>
+            </h1>
+          </div>
+          <body class="unique_bgimage">
+
+        </div>
+    </div>
+
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="row">
+
+
+              <table class="table table-striped table-hover">
+                <tr>
+                  <th>Recipient</th>
+                  <th>Sender</th>
+                  <th>Message text</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+
+                <% @messages.each do |message| %>
+                <tr>
+                  <td><%= message.recipient.f_name %></td>
+                  <td><%= message.sender.f_name %></td>
+                  <td><%= message.message_text %></td>
+                  <td><%= message.created_at.strftime("%B %d, %Y") %></td>
+                  <td>
+                    <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>
+                    <a href="/messages/<%= message.id %>/edit" class="btn btn-warning">Edit</a>
+                    <a href="/delete_message/<%= message.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+                  </td>
+                </tr>
+                <% end %>
+              </table>
+
+            </body>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+</div>

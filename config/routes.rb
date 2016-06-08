@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Routes for the Note resource:
   # CREATE
 
-  root "messages#index"
+  root :controller => 'pages', :action => 'show'
 
   get "/pages", :controller => "pages", :action => "show"
 
@@ -28,7 +28,10 @@ Rails.application.routes.draw do
 
   # READ
   get "/messages", :controller => "messages", :action => "index"
+  get "/messages/mysent", :controller => "messages", :action => "mysent"
+  get "/messages/myreceived", :controller => "messages", :action => "myreceived"
   get "/messages/:id", :controller => "messages", :action => "show"
+
 
   # UPDATE
   get "/messages/:id/edit", :controller => "messages", :action => "edit"
@@ -40,6 +43,8 @@ Rails.application.routes.draw do
 
   # devise_for :users
   devise_for :users, :controllers => { registrations: 'registrations' }
+
+  get "/users/:id", :controller => "users", :action => "show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

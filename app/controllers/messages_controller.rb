@@ -3,6 +3,14 @@ class MessagesController < ApplicationController
     @messages = Message.all
   end
 
+  def mysent
+    @messages = current_user.sent_messages
+  end
+
+  def myreceived
+    @messages = current_user.received_messages
+  end
+
   def show
     @message = Message.find(params[:id])
   end
