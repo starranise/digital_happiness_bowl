@@ -28,15 +28,7 @@
 
       </div>
 
-      <!-- Label and input for sender_id -->
-      <div class="form-group">
-        <label for="sender_id" class="control-label">
-          Sender
-        </label>
-
-        <%= select_tag(:sender_id, options_from_collection_for_select(User.all, :id, :f_name, @message.sender_id),  :class => "form-control") %>
-
-      </div>
+      <%= hidden_field_tag(:sender_id, current_user.id) %>
 
       <!-- Label and input for message_text -->
       <div class="form-group">

@@ -30,8 +30,8 @@
 
                 <% @messages.each do |message| %>
                 <tr>
-                  <td><%= message.recipient_id %></td>
-                  <td><%= message.sender_id %></td>
+                  <td><%= message.recipient.f_name %></td>
+                  <td><%= message.sender.f_name %></td>
                   <td><%= message.message_text %></td>
                   <td><%= message.created_at.strftime("%B %d, %Y") %></td>
                   <td>
