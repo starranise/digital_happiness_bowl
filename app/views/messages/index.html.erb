@@ -32,7 +32,8 @@
                 <tr>
                   <td><%= message.recipient.f_name %></td>
                   <td><%= message.sender.f_name %></td>
-                  <td><%= message.message_text %></td>
+                  <td><div>
+                  <%= message.message_text %>   </div></td>
                   <td><%= message.created_at.strftime("%B %d, %Y") %></td>
                   <td>
                     <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>

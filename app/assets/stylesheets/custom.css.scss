@@ -61,3 +61,32 @@
 #main-content {
   background-color: #7A7878;
 }
+
+
+#messages {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.block {
+    width: 300px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100px;
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;         /* <- this does seem to be required */
+  text-overflow: ellipsis;
+}
