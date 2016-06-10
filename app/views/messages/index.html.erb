@@ -35,11 +35,23 @@
                   <td><div>
                   <%= message.message_text %>   </div></td>
                   <td><%= message.created_at.strftime("%B %d, %Y") %></td>
-                  <td>
+                    <td><% if current_user.id == message.sender.id or current_user.id == message.recipient.id%>
+
+                        <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>
+                        <a href="/messages/<%= message.id %>/edit" class="btn btn-warning">Edit</a>
+                        <a href="/delete_message/<%= message.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+
+                        <% else %>
+                    
+                        <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>
+                      <!-- true -->
+                    <% end %>
+                  </td>
+                  <!-- <td>
                     <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>
                     <a href="/messages/<%= message.id %>/edit" class="btn btn-warning">Edit</a>
                     <a href="/delete_message/<%= message.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-                  </td>
+                  </td> -->
                 </tr>
                 <% end %>
               </table>
