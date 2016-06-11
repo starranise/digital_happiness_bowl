@@ -15,17 +15,28 @@
       <dd><%= @message.message_text %></dd>
 
     </dl>
+    <% if current_user.id == @message.sender.id or current_user.id == @message.recipient.id %>
 
-    <div class="btn-group btn-group-justified">
-      <a href="/messages" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/messages/<%= @message.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_message/<%= @message.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
+      <div class="btn-group btn-group-justified">
+        <a href="/messages" class="btn btn-primary">
+          Back
+        </a>
+        <a href="/messages/<%= @message.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_message/<%= @message.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      </div>
+
+        <% else %>
+
+        <div class="btn-group btn-group-justified">
+          <a href="/messages" class="btn btn-primary">
+            Back
+          </a>
+        </div>
+    <% end %>
+
   </div>
 </div>
