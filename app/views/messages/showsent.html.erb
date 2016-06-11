@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Message #<%= @message.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Recipient</dt>
+      <dd><%= @message.recipient.f_name %></dd>
+
+      <dt>Sender</dt>
+      <dd><%= @message.sender.f_name %></dd>
+
+      <dt>Message text</dt>
+      <dd><%= @message.message_text %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/messages/mysent" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/messages/<%= @message.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_message/<%= @message.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

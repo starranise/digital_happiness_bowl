@@ -29,7 +29,9 @@ Rails.application.routes.draw do
   # READ
   get "/messages", :controller => "messages", :action => "index"
   get "/messages/mysent", :controller => "messages", :action => "mysent"
+  get "/messages/mysent/:id", :controller => "messages", :action => "showsent"
   get "/messages/myreceived", :controller => "messages", :action => "myreceived"
+  get "/messages/myreceived/:id", :controller => "messages", :action => "showreceived"
   get "/messages/:id", :controller => "messages", :action => "show"
 
 

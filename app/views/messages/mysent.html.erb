@@ -35,7 +35,7 @@
                   <td><%= message.message_text %></td>
                   <td><%= message.created_at.strftime("%B %d, %Y") %></td>
                   <td>
-                    <a href="/messages/<%= message.id %>" class="btn btn-primary">Show</a>
+                    <a href="/messages/mysent/<%= message.id %>" class="btn btn-primary">Show</a>
                     <a href="/messages/<%= message.id %>/edit" class="btn btn-warning">Edit</a>
                     <a href="/delete_message/<%= message.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
                   </td>
